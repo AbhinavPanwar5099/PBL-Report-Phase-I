@@ -1,0 +1,262 @@
+% Compile with pdfLaTeX.
+% Ensure member1.jpeg, member2.png, member3.jpeg, and architecture.png are in the same folder.
+
+\documentclass[10pt,a4paper]{article}
+
+% --- Page Geometry ---
+\usepackage[
+    a4paper,
+    left=1.5cm,
+    right=1.5cm,
+    top=1.3cm,
+    bottom=1.3cm,
+    headheight=14pt,
+    headsep=8pt,
+    footskip=12pt
+]{geometry}
+
+% --- Fonts & Encoding (Times New Roman) ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{newtxtext,newtxmath} % Complete Times New Roman font suite
+\usepackage{microtype}
+
+% --- Graphics & Colors ---
+\usepackage{graphicx}
+\usepackage{xcolor}
+\definecolor{TitleBlue}{RGB}{41, 88, 142}
+\definecolor{SubTextGray}{RGB}{85, 95, 110}
+\definecolor{BorderGray}{RGB}{180, 190, 205}
+\definecolor{BoxBg}{RGB}{252, 253, 255}
+\definecolor{TitleBlack}{RGB}{0,0,0}
+
+% --- Layout & Tables ---
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\setlength{\headheight}{37.85225pt}
+\usepackage{setspace}
+\usepackage[most]{tcolorbox}
+\usepackage[hidelinks,colorlinks=true,allcolors=TitleBlue]{hyperref}
+
+% --- Paragraph Formatting ---
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\renewcommand{\arraystretch}{1.15}
+
+% --- Heading Commands ---
+\newcommand{\bluebigheading}[1]{%
+    {\bfseries\color{TitleBlue}\fontsize{13}{15}\selectfont #1}\par
+}
+
+\newcommand{\blueheading}[1]{%
+    \vspace{2.5mm}%
+    {\bfseries\color{TitleBlue}\fontsize{11}{13}\selectfont #1}\par
+}
+
+\newcommand{\instruction}[1]{%
+    \vspace{0.5mm}%
+    {\itshape\color{SubTextGray}\fontsize{8.5}{10.5}\selectfont #1}\par
+    \vspace{1mm}%
+}
+
+% --- Styled Dynamic Answer Box ---
+\newtcolorbox{dynamicanswerbox}[1][]{%
+    enhanced,
+    arc=1.5mm,
+    colback=BoxBg,
+    colframe=BorderGray,
+    boxrule=0.6pt,
+    left=3mm,
+    right=3mm,
+    top=2mm,
+    bottom=2mm,
+    boxsep=0mm,
+    before skip=1.5mm,
+    after skip=1.5mm,
+    fontupper=\fontsize{8.5}{11}\selectfont\normalfont,
+    #1
+}
+
+% --- Header & Footer ---
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{BorderGray}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancyhead[L]{%
+    \bfseries\fontsize{8.5}{10}\selectfont\color{TitleBlack}
+    \textbf{DS with C (TCS-302) \& OOPS with C++ (TCS-307) \\ DSCPP-III-2026-T224}
+    
+    
+}
+\fancyhead[R]{%
+    \bfseries\fontsize{8.5}{10}\selectfont\color{TitleBlue}
+    PROJECT PROPOSAL
+}
+\fancyfoot[R]{%
+    \fontsize{8}{9.5}\selectfont\color{SubTextGray}
+    Page \thepage
+}
+
+\begin{document}
+
+% =================================================
+% PAGE 1
+% =================================================
+\bluebigheading{PROJECT AND TEAM INFORMATION}
+\blueheading{Project Title}
+
+\begin{dynamicanswerbox}
+\textbf{VeriNews: An Explainable Multi-Factor News Verification and Credibility Scoring Engine Using DSA in C/C++}
+\end{dynamicanswerbox}
+\blueheading{Student / Team Information}
+\vspace{1.5mm}
+
+% Team information table
+\noindent
+\begin{tabularx}{\textwidth}{|>{\RaggedRight\arraybackslash}p{0.52\textwidth}|>{\RaggedRight\arraybackslash}X|}
+\hline
+\textbf{Team Name:} ByteForce & \textbf{Team \#:} 07 \\
+\hline
+\begin{minipage}[c][3.8cm][c]{\linewidth}
+    \textbf{Team member 1 (Team Lead)}\\[1mm]
+    \textit{Srivastava, Shambhavi}\\
+    \textbf{ID:} 2510012471\\
+    \textbf{Email:} \href{mailto:2510012471@geu.ac.in}{2510012471@geu.ac.in}
+\end{minipage}
+&
+\begin{minipage}[c][3.8cm][c]{\linewidth}
+    \centering
+    \includegraphics[width=2.5cm,height=3.2cm,keepaspectratio]{member1.jpeg}
+\end{minipage}
+\\
+\hline
+\begin{minipage}[c][3.8cm][c]{\linewidth}
+    \textbf{Team member 2}\\[1mm]
+    \textit{Panwar, Abhinav}\\
+    \textbf{ID:} 2512510050\\
+    \textbf{Email:} \href{mailto:2512510050@geu.ac.in}{2512510050@geu.ac.in}
+\end{minipage}
+&
+\begin{minipage}[c][3.8cm][c]{\linewidth}
+    \centering
+    \includegraphics[width=2.5cm,height=3.2cm,keepaspectratio]{member2.png}
+\end{minipage}
+\\
+\hline
+\begin{minipage}[c][3.8cm][c]{\linewidth}
+    \textbf{Team member 3}\\[1mm]
+    \textit{Sharma, Akshat Mohan}\\
+    \textbf{ID:} 2510010700\\
+    \textbf{Email:} \href{mailto:2510010700@geu.ac.in}{2510010700@geu.ac.in}
+\end{minipage}
+&
+\begin{minipage}[c][3.8cm][c]{\linewidth}
+    \centering
+    \includegraphics[width=2.5cm,height=3.2cm,keepaspectratio]{member3.jpeg}
+\end{minipage}
+\\
+\hline
+\end{tabularx}
+
+\newpage
+
+% =================================================
+% PAGE 2
+% =================================================
+\bluebigheading{PROPOSAL DESCRIPTION (10 pts)}
+\vspace{5mm}
+\blueheading{Motivation (1 pt)}
+
+\begin{dynamicanswerbox}
+In the modern digital information ecosystem, misinformation and sensationalized news spread rapidly across messaging platforms, social media, and digital channels. False narratives, manipulated headlines, and unverified claims distort public perception, trigger panic, and erode trust in credible journalism. For everyday users and students, verifying the credibility of an incoming headline or article in real time is challenging due to the high velocity and sheer volume of uncurated data.
+
+Most existing verification efforts rely either on slow manual fact-checking or complex, black-box machine learning models that do not offer explainability. The core challenge is not simply assigning an arbitrary binary label of ``Fake'' or ``Real,'' but offering users a preliminary, transparent credibility score backed by diagnostic reasons explaining why a piece of news was flagged. We aim to solve this by building \textbf{VeriNews}, a fast and explainable verification engine implemented using fundamental Data Structures (DSA in C) combined with Object-Oriented Programming (C++). By extracting key entities, matching them against curated databases of verified and suspicious records, and computing an objective score across source reliability, topical alignment, and temporal consistency, our platform delivers an accessible, educational, and computational solution to help combat misinformation at the source.
+\end{dynamicanswerbox}
+\vspace{10mm}
+\blueheading{State of the Art / Current solution (1 pt)}
+
+\begin{dynamicanswerbox}
+Today, fake news verification is primarily addressed through two extremes: manual fact-checking portals (such as Snopes, Alt News, and PolitiFact) and automated AI/NLP cloud APIs. Manual fact-checking provides thorough investigation but suffers from severe turnaround delays, meaning viral misinformation spreads long before a rebuttal is published. On the technological side, commercial platforms utilize complex neural networks or proprietary cloud fact-checking APIs. However, these systems function largely as opaque black boxes without revealing their internal criteria, source credibility indexes, or entity weighting to the end-user. Moreover, existing systems rarely offer standalone, lightweight rule-based software that can perform high-throughput preliminary verification locally using structured in-memory algorithms without heavy external dependencies.
+\end{dynamicanswerbox}
+\vspace{10mm}
+\blueheading{Project Goals and Milestones (2 pts)}
+
+\begin{dynamicanswerbox}
+Our goal is to engineer a high-performance verification and credibility scoring application where users can submit headlines or article snippets and immediately receive a weighted verification score (0--100\%) along with an itemized explanation.
+
+\vspace{1mm}
+\textbf{Project Milestones:}
+\begin{itemize}[leftmargin=4.5mm,itemsep=1.5pt,topsep=1.5pt,partopsep=0pt,parsep=0pt]
+    \item \textbf{Milestone 1 (Phase 1):} Core Data Structure Implementation --- Build C modules for Hash Tables (keyword indexing), Linked Lists (news records), and Binary Search Trees (sorting/filtering records by score and date).
+    \item \textbf{Milestone 2 (Phase 2):} Tokenization \& Verification Engine --- Develop keyword extraction, source reputation scoring, and the multi-factor weighted verification algorithm.
+    \item \textbf{Milestone 3 (Phase 2/3):} C++ OOP Layer \& Request Queueing --- Build class hierarchies (\texttt{User}, \texttt{News}, \texttt{VerificationEngine}, \texttt{Admin}), FIFO request queues, and undo/history stacks.
+    \item \textbf{Milestone 4 (Phase 3):} File Persistence \& Admin Module --- Implement file handling for persistent news records, trusted source registries, and administrative CRUD operations.
+    \item \textbf{Milestone 5 (Phase 3):} Testing \& Comprehensive Benchmarking --- Unit test matching accuracy, edge cases, and generate final proposal deliverables.
+\end{itemize}
+\end{dynamicanswerbox}
+\vspace{10mm}
+\blueheading{Project Approach (3 pts)}
+
+\begin{dynamicanswerbox}
+We are implementing this project through a modular multi-tier architecture combining low-level C Data Structures for optimal performance with high-level C++ Object-Oriented Programming (OOP) for maintainability and modular system design:
+
+\vspace{1mm}
+\begin{itemize}[leftmargin=4.5mm,itemsep=1.5pt,topsep=1.5pt,partopsep=0pt,parsep=0pt]
+    \item \textbf{Text Processing \& Keyword Extraction:} Cleans input text, strips noise, filters stop words, and tokenizes key entities.
+    \item \textbf{Data Structures \& Matching Layer (C):} Hash Tables for near $O(1)$ keyword lookup, dynamic Linked Lists for record chaining, Binary Search Trees (BST) for temporal/score range filtering, FIFO Queues for input batching, and Stacks for operation history.
+    \item \textbf{Multi-Factor Verification Engine:} Computes a composite weighted metric: \textit{Entity Match (40\%)}, \textit{Source Reliability (25\%)}, \textit{Corroborating Reports (20\%)}, \textit{Temporal Consistency (10\%)}, and \textit{Category Alignment (5\%)}.
+    \item \textbf{Classification \& Persistence (C++ OOP):} Categorizes output into \textit{Likely Verified} (80--100\%), \textit{Needs Verification} (50--79\%), or \textit{Suspicious} (0--49\%) with structured binary/text file persistence.
+\end{itemize}
+\end{dynamicanswerbox}
+
+\newpage
+
+% =================================================
+% PAGE 3
+% =================================================
+\vspace{7mm}
+\blueheading{System Architecture (High Level Diagram) (2 pts)}
+
+\begin{dynamicanswerbox}
+\centering
+\vspace{1mm}
+\includegraphics[width=0.96\textwidth,height=15cm,keepaspectratio]{architecture.png}
+\vspace{1mm}
+\end{dynamicanswerbox}
+\vspace{7mm}
+\blueheading{Project Outcome / Deliverables (1 pt)}
+
+\begin{dynamicanswerbox}
+By the conclusion of this project, we will deliver a fully functional, self-contained C/C++ application (\textbf{VeriNews}) that enables users to evaluate news headlines and inspect detailed credibility breakdowns. Key Deliverables include:
+\begin{itemize}[leftmargin=4.5mm,itemsep=1pt,topsep=1pt,partopsep=0pt,parsep=0pt]
+    \item Complete, modular, and documented source code integrating custom C data structures (Hash Tables, BST, Linked Lists, Queues, Stacks) with C++ OOP classes.
+    \item Pre-configured persistent dataset containing verified news, flagged suspicious records, and trusted publisher indexes.
+    \item Interactive Administrative module offering full CRUD capabilities for database updates and audit history.
+    \item Comprehensive project report, algorithmic complexity analysis, UML diagrams, and a live demonstration showing real-time news verification and scoring.
+\end{itemize}
+\end{dynamicanswerbox}
+\vspace{7mm}
+\blueheading{Assumptions}
+
+\begin{dynamicanswerbox}
+Submissions are assumed to be in English with sufficient entity density for tokenization. A baseline truth dataset is curated by administrators. The tool operates as a fast, deterministic local verification aid rather than an exhaustive real-time crawler.
+\end{dynamicanswerbox}
+\vspace{7mm}
+\blueheading{References}
+
+\begin{dynamicanswerbox}
+\begin{enumerate}[leftmargin=5mm,label={[\arabic*]},itemsep=0.5pt,topsep=0.5pt,partopsep=0pt,parsep=0pt]
+    \item Vosoughi, S., Roy, D., \& Aral, S. (2018). The spread of true and false news online. \textit{Science}, 359(6380), 1146--1151. \url{https://doi.org/10.1126/science.aap9559}
+    \item Shu, K., Sliva, A., Wang, S., Tang, J., \& Liu, H. (2017). Fake News Detection on Social Media. \textit{ACM SIGKDD Explorations}, 19(1), 22--36. \url{https://doi.org/10.1145/3137597.3137600}
+    \item Cormen, T. H., et al. (2009). \textit{Introduction to Algorithms} (3rd ed.). MIT Press.
+    \item Stroustrup, B. (2013). \textit{The C++ Programming Language} (4th ed.). Addison-Wesley.
+    \item Lazer, D. M., et al. (2018). The science of fake news. \textit{Science}, 359(6380), 1094--1096. \url{https://doi.org/10.1126/science.aao2998}
+\end{enumerate}
+\end{dynamicanswerbox}
+
+\end{document}
